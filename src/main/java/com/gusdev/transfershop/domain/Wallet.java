@@ -50,7 +50,7 @@ public class Wallet {
         this.balance.add(value);
     }
 
-    public void transfer(BigDecimal value) throws TransferException {
+    public void sendTransfer(BigDecimal value) throws TransferException {
         if (this.user.getType() == UserType.SALESCLERK){
             throw new TransferException(ErrorCode.TR0001.getMessage(), ErrorCode.TR0001.getCode());
         }
