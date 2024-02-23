@@ -1,8 +1,7 @@
 package com.gusdev.transfershop.gateway;
 
 import com.gusdev.transfershop.domain.Transaction;
-import com.gusdev.transfershop.domain.TransactionPin;
 
-public interface TransactionValidateGw {
+public interface ValidateTransactionGw {
     Boolean validate(Transaction transaction);
 }

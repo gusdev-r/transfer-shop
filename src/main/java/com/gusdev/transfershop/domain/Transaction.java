@@ -7,8 +7,8 @@ import java.time.LocalDateTime;
 
 public class Transaction {
     private Long id;
-    private Wallet fromWallet;
     private Wallet toWallet;
+    private Wallet fromWallet;
     private BigDecimal value;
     private TransactionStatus status;
     private LocalDateTime createdAt;
