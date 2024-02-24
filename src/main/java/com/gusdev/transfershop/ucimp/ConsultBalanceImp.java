@@ -1,21 +1,21 @@
 package com.gusdev.transfershop.ucimp;
 
-import com.gusdev.transfershop.domain.Wallet;
+import com.gusdev.transfershop.core.domain.Wallet;
 import com.gusdev.transfershop.gateway.ConsultBalanceGw;
 import com.gusdev.transfershop.usecase.ConsultBalanceUc;
+import com.gusdev.transfershop.usecase.FindWalletByTaxNumberUc;
 
 import java.math.BigDecimal;
 
 public class ConsultBalanceImp implements ConsultBalanceUc {
+    private FindWalletByTaxNumberUc findWalletByTaxNumberUc;
 
-    private ConsultBalanceGw consultBalanceGw;
-
-    public ConsultBalanceImp(ConsultBalanceGw consultBalanceGw) {
-        this.consultBalanceGw = consultBalanceGw;
+    public ConsultBalanceImp(FindWalletByTaxNumberUc findWalletByTaxNumberUc) {
+        this.findWalletByTaxNumberUc = findWalletByTaxNumberUc;
     }
 
     @Override
-    public BigDecimal consult(Wallet wallet) {
-        return null;
+    public BigDecimal consult(String taxNumber) throws Exception{
+        return findWalletByTaxNumberUc.findByTaxNumber(taxNumber).getBalance();
     }
 }

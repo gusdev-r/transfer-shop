@@ -1,8 +1,8 @@
 package com.gusdev.transfershop.usecase;
 
-import com.gusdev.transfershop.domain.Wallet;
-import com.gusdev.transfershop.exceptions.NotFoundException;
+import com.gusdev.transfershop.core.domain.Wallet;
+import com.gusdev.transfershop.core.exceptions.NotFoundException;
 
 public interface FindWalletByTaxNumberUc {
-    Wallet findByTaxNumber(String taxNumber) throws NotFoundException;
+    Wallet findByTaxNumber(String taxNumber) throws Exception;
 }

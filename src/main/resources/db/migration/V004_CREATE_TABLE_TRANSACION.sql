@@ -1,4 +1,4 @@
-CREATE TABLE tb_transaction (
+CREATE TABLE tb_transactions (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     from_wallet BIGINT NOT NULL,
     to_wallet BIGINT NOT NULL,

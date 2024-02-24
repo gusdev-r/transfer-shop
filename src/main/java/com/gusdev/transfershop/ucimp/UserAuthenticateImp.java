@@ -1,7 +1,7 @@
 package com.gusdev.transfershop.ucimp;
 
-import com.gusdev.transfershop.exceptions.AuthenticateException;
-import com.gusdev.transfershop.exceptions.enums.ErrorCode;
+import com.gusdev.transfershop.core.exceptions.AuthenticateException;
+import com.gusdev.transfershop.core.exceptions.enums.ErrorCode;
 import com.gusdev.transfershop.gateway.UserAuthenticateGw;
 import com.gusdev.transfershop.usecase.UserAuthenticateUc;
 

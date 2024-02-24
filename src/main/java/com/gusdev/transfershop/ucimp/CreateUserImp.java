@@ -1,13 +1,13 @@
 package com.gusdev.transfershop.ucimp;
 
-import com.gusdev.transfershop.domain.TransactionPin;
-import com.gusdev.transfershop.domain.User;
-import com.gusdev.transfershop.domain.Wallet;
-import com.gusdev.transfershop.exceptions.EmailException;
-import com.gusdev.transfershop.exceptions.InternalServerErrorException;
-import com.gusdev.transfershop.exceptions.TaxNumberException;
-import com.gusdev.transfershop.exceptions.TransactionPinException;
-import com.gusdev.transfershop.exceptions.enums.ErrorCode;
+import com.gusdev.transfershop.core.domain.TransactionPin;
+import com.gusdev.transfershop.core.domain.User;
+import com.gusdev.transfershop.core.domain.Wallet;
+import com.gusdev.transfershop.core.exceptions.EmailException;
+import com.gusdev.transfershop.core.exceptions.InternalServerErrorException;
+import com.gusdev.transfershop.core.exceptions.TaxNumberException;
+import com.gusdev.transfershop.core.exceptions.TransactionPinException;
+import com.gusdev.transfershop.core.exceptions.enums.ErrorCode;
 import com.gusdev.transfershop.gateway.CreateUserGw;
 import com.gusdev.transfershop.gateway.EmailAvailableGw;
 import com.gusdev.transfershop.gateway.TaxNumberAvailableGw;
@@ -26,7 +26,7 @@ public class CreateUserImp implements CreateUserUc {
         this.createUserGw = createUserGw;
     }
     @Override
-    public void crateUser(User user, String pin) throws TaxNumberException, EmailException, TransactionPinException, InternalServerErrorException {
+    public void createUser(User user, String pin) throws TaxNumberException, EmailException, TransactionPinException, InternalServerErrorException {
         if (!taxNumberAvailableGw.taxNumberAvailable(user.getTaxNumber().getValue())) {
             throw new TaxNumberException(ErrorCode.ON0002.getMessage(), ErrorCode.ON0002.getCode());
         }

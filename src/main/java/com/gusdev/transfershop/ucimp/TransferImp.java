@@ -1,9 +1,9 @@
 package com.gusdev.transfershop.ucimp;
 
-import com.gusdev.transfershop.domain.Transaction;
-import com.gusdev.transfershop.domain.Wallet;
-import com.gusdev.transfershop.exceptions.*;
-import com.gusdev.transfershop.exceptions.enums.ErrorCode;
+import com.gusdev.transfershop.core.domain.Transaction;
+import com.gusdev.transfershop.core.domain.Wallet;
+import com.gusdev.transfershop.core.exceptions.*;
+import com.gusdev.transfershop.core.exceptions.enums.ErrorCode;
 import com.gusdev.transfershop.gateway.TransferGw;
 import com.gusdev.transfershop.usecase.*;
 
@@ -29,10 +29,10 @@ public class TransferImp implements TransferUc {
     }
 
     @Override
-    public Boolean transfer(String fromTaxNumber, String toTaxNumber, BigDecimal value, String pin) throws InternalServerErrorException, NotFoundException, TransferException, NotificationException, PinException {
+    public Boolean transfer(String fromTaxNumber, String toTaxNumber, BigDecimal value, String pin) throws Exception {
         Wallet transferFrom = findWalletByTaxNumberUc.findByTaxNumber(fromTaxNumber);
         Wallet transferTo = findWalletByTaxNumberUc.findByTaxNumber(toTaxNumber);
-        validateTransactionPinUc.validateTransactionPin(transferFrom.getTransactionPin());
+        validateTransactionPinUc.validateTransactionPin(transferFrom.getTransactionPin(), pin);
 
         transferFrom.sendTransfer(value);
         transferTo.receiveTransfer(value);

@@ -1,6 +1,6 @@
 package com.gusdev.transfershop.gateway;
 
-import com.gusdev.transfershop.domain.Wallet;
+import com.gusdev.transfershop.core.domain.Wallet;
 
 import java.math.BigDecimal;
 

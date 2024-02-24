@@ -1,6 +1,6 @@
 package com.gusdev.transfershop.ucimp;
 
-import com.gusdev.transfershop.domain.Transaction;
+import com.gusdev.transfershop.core.domain.Transaction;
 import com.gusdev.transfershop.gateway.UserNotificationGw;
 import com.gusdev.transfershop.usecase.UserNotificationUc;
 

@@ -1,8 +1,8 @@
 package com.gusdev.transfershop.ucimp;
 
-import com.gusdev.transfershop.domain.Transaction;
-import com.gusdev.transfershop.exceptions.TransferException;
-import com.gusdev.transfershop.exceptions.enums.ErrorCode;
+import com.gusdev.transfershop.core.domain.Transaction;
+import com.gusdev.transfershop.core.exceptions.TransferException;
+import com.gusdev.transfershop.core.exceptions.enums.ErrorCode;
 import com.gusdev.transfershop.gateway.ValidateTransactionGw;
 import com.gusdev.transfershop.usecase.ValidateTransactionUc;
 
