@@ -12,29 +12,29 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tb_wallets")
+@Table(name = "TB_WALLETS")
 public class WalletEntity {
 
-    @Column(name = "id")
+    @Column(name = "ID")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "balance", nullable = false)
+    @Column(name = "BALANCE", nullable = false)
     private BigDecimal balance;
 
     @OneToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "ID_USER")
     private UserEntity userEntity;
 
     @OneToOne
-    @JoinColumn(name = "transaction_pin_entity")
+    @JoinColumn(name = "ID_TRANSACTION_PIN")
     private TransactionPinEntity transactionPinEntity;
 
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "CREATED_AT", nullable = false)
     private LocalDateTime createdAt;
 
-    @Column(name = "updated_at")
+    @Column(name = "UPDATED_AT")
     private LocalDateTime updatedAt;
 
     public WalletEntity(BigDecimal balance, UserEntity userEntity, TransactionPinEntity transactionPinEntity, LocalDateTime createdAt, LocalDateTime updatedAt) {

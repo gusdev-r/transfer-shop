@@ -10,7 +10,7 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Table(name = "tb_transactions")
+@Table(name = "TB_TRANSACTIONS")
 @AllArgsConstructor
 @Getter
 @Setter
@@ -18,30 +18,30 @@ import java.time.LocalDateTime;
 @Entity
 public class TransactionEntity {
 
-    @Column
+    @Column(name = "ID")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "to_wallet")
+    @JoinColumn(name = "TO_WALLET")
     private WalletEntity toWallet;
 
     @ManyToOne
-    @JoinColumn(name = "from_wallet")
+    @JoinColumn(name = "FROM_WALLET")
     private WalletEntity fromWallet;
 
-    @Column(name = "transaction_value", nullable = false)
+    @Column(name = "TRANSACTION_VALUE", nullable = false)
     private BigDecimal value;
 
-    @Column(name = "status", nullable = false)
+    @Column(name = "STATUS", nullable = false)
     @Enumerated(EnumType.STRING)
     private TransactionStatus status;
 
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "CREATED_AT", nullable = false)
     private LocalDateTime createdAt;
 
-    @Column(name = "updated_at")
+    @Column(name = "UPDATED_AT")
     private LocalDateTime updatedAt;
 
     public TransactionEntity(WalletEntity toWallet, WalletEntity fromWallet, BigDecimal value, TransactionStatus status, LocalDateTime createdAt, LocalDateTime updatedAt) {

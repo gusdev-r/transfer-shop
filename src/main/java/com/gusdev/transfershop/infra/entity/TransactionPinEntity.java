@@ -5,11 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.CollectionId;
 
 import java.time.LocalDateTime;
 
-@Table(name = "tb_transaction_pin)")
+@Table(name = "TB_TRANSACTION_PIN")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -17,19 +16,19 @@ import java.time.LocalDateTime;
 @Entity
 public class TransactionPinEntity {
 
-     @Column(name = "id")
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
+     @Column(name = "ID")
      private Long id;
-     @Column(name = "pin", nullable = false)
+     @Column(name = "PIN", nullable = false)
      private String pin;
-     @Column(name = "attempt", nullable = false)
+     @Column(name = "ATTEMPT", nullable = false)
      private Integer attempt;
-     @Column(name = "blocked", nullable = false)
+     @Column(name = "BLOCKED", nullable = false)
      private Boolean blocked;
-     @Column(name = "created_at", nullable = false)
+     @Column(name = "CREATED_AT", nullable = false)
      private LocalDateTime createdAt;
-     @Column(name = "updated_at", nullable = false)
+     @Column(name = "UPDATED_AT", nullable = false)
      private LocalDateTime updatedAt;
 
      public TransactionPinEntity(String pin, Integer attempt, Boolean blocked, LocalDateTime createdAt, LocalDateTime updatedAt) {

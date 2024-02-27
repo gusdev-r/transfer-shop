@@ -1,5 +1,2 @@
 rootProject.name = 'transfer-shop'
-include 'core'
-include 'usecase'
-include 'application'
-include 'infrastructure'
+
